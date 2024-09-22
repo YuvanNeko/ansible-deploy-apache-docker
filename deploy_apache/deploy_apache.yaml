@@ -9,7 +9,7 @@
         name: apache
         image: bitnami/apache
         volumes:
-          - /home/dietpi/Ansible/deploy_docker/app:/app
+          - /path/to/app:/app
         ports:
           - '8080:8080'
           - '8443:8443'
