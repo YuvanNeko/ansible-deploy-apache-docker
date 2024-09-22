@@ -1,0 +1,15 @@
+---
+- hosts: dietpi
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Pull bitnami/apache image
+      community.docker.docker_container:
+        name: apache
+        image: bitnami/apache
+        volumes:
+          - /home/dietpi/Ansible/deploy_docker/app:/app
+        ports:
+          - '8080:8080'
+          - '8443:8443'
